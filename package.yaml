@@ -1,0 +1,81 @@
+name:                dyco-mirror-bot
+version:             0.1.0.0
+github:              "githubuser/dyco-mirror-bot"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2020 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/dyco-mirror-bot#readme>
+
+dependencies:
+- aeson
+- async
+- base >= 4.7 && < 5
+- bytestring
+- discord-haskell
+- mtl
+- optics
+- optics-th
+- pointless-fun
+- servant-client
+- stm
+- telegram-bot-simple
+- text
+- text-show
+- transformers-base
+- unordered-containers
+- yaml
+
+default-extensions:
+- DataKinds
+- DeriveAnyClass
+- DeriveGeneric
+- DerivingStrategies
+- DerivingVia
+- DuplicateRecordFields
+- FlexibleContexts
+- FlexibleInstances
+- GeneralizedNewtypeDeriving
+- MultiParamTypeClasses
+- NamedFieldPuns
+- OverloadedLabels
+- OverloadedStrings
+- RecordWildCards
+- TemplateHaskell
+- TransformListComp
+- TypeFamilies
+- UndecidableInstances
+- ViewPatterns
+
+library:
+  source-dirs: src
+
+executables:
+  dyco-mirror-bot-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    dependencies:
+    - dyco-mirror-bot
+
+tests:
+  dyco-mirror-bot-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    dependencies:
+    - dyco-mirror-bot

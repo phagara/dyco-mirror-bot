@@ -1,0 +1,23 @@
+name: <bot-name> # should be the same for both Telegram and Discord bot
+
+telegram:
+  token: <your telegram bot token>
+  channels:
+    foo: "<ID of telegram channel 'foo'>"
+    # ...
+
+discord:
+  token: <your discord bot token>
+  channels:
+    bar: "<ID of discord channel 'bar'>"
+    baz: "<ID of discord channel 'baz'>"
+    # ...
+
+mirrors:
+  - source: telegram/foo
+    target: discord/bar
+  - source: discord/bar
+    target: telegram/foo
+  - source: discord/baz
+    target: telegram/foo
+  # ...

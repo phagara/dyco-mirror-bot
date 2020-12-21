@@ -1,0 +1,117 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 014f8bb3483186ed7cf23d5dddcb55d5007a5d0f2459a6763cfa96672305f6e6
+
+name:           dyco-mirror-bot
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/dyco-mirror-bot#readme>
+homepage:       https://github.com/githubuser/dyco-mirror-bot#readme
+bug-reports:    https://github.com/githubuser/dyco-mirror-bot/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/dyco-mirror-bot
+
+library
+  exposed-modules:
+      Config
+      Core
+      Providers.API
+      Providers.Discord
+      Providers.Telegram
+  other-modules:
+      Paths_dyco_mirror_bot
+  hs-source-dirs:
+      src
+  default-extensions: DataKinds DeriveAnyClass DeriveGeneric DerivingStrategies DerivingVia DuplicateRecordFields FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving MultiParamTypeClasses NamedFieldPuns OverloadedLabels OverloadedStrings RecordWildCards TemplateHaskell TransformListComp TypeFamilies UndecidableInstances ViewPatterns
+  build-depends:
+      aeson
+    , async
+    , base >=4.7 && <5
+    , bytestring
+    , discord-haskell
+    , mtl
+    , optics
+    , optics-th
+    , pointless-fun
+    , servant-client
+    , stm
+    , telegram-bot-simple
+    , text
+    , text-show
+    , transformers-base
+    , unordered-containers
+    , yaml
+  default-language: Haskell2010
+
+executable dyco-mirror-bot-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_dyco_mirror_bot
+  hs-source-dirs:
+      app
+  default-extensions: DataKinds DeriveAnyClass DeriveGeneric DerivingStrategies DerivingVia DuplicateRecordFields FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving MultiParamTypeClasses NamedFieldPuns OverloadedLabels OverloadedStrings RecordWildCards TemplateHaskell TransformListComp TypeFamilies UndecidableInstances ViewPatterns
+  ghc-options: -threaded
+  build-depends:
+      aeson
+    , async
+    , base >=4.7 && <5
+    , bytestring
+    , discord-haskell
+    , dyco-mirror-bot
+    , mtl
+    , optics
+    , optics-th
+    , pointless-fun
+    , servant-client
+    , stm
+    , telegram-bot-simple
+    , text
+    , text-show
+    , transformers-base
+    , unordered-containers
+    , yaml
+  default-language: Haskell2010
+
+test-suite dyco-mirror-bot-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_dyco_mirror_bot
+  hs-source-dirs:
+      test
+  default-extensions: DataKinds DeriveAnyClass DeriveGeneric DerivingStrategies DerivingVia DuplicateRecordFields FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving MultiParamTypeClasses NamedFieldPuns OverloadedLabels OverloadedStrings RecordWildCards TemplateHaskell TransformListComp TypeFamilies UndecidableInstances ViewPatterns
+  ghc-options: -threaded
+  build-depends:
+      aeson
+    , async
+    , base >=4.7 && <5
+    , bytestring
+    , discord-haskell
+    , dyco-mirror-bot
+    , mtl
+    , optics
+    , optics-th
+    , pointless-fun
+    , servant-client
+    , stm
+    , telegram-bot-simple
+    , text
+    , text-show
+    , transformers-base
+    , unordered-containers
+    , yaml
+  default-language: Haskell2010

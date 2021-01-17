@@ -1,0 +1,9 @@
+language: nix
+sudo: required
+services:
+  - docker
+script:
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install
+  - cachix use matobet-rpi
+  - nix-build docker.nix

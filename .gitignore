@@ -6,3 +6,6 @@
 *.yml
 .vscode
 dist-newstyle
+*.tar
+*.gz
+result

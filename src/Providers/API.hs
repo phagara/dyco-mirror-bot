@@ -10,28 +10,29 @@ module Providers.API
 
 import Core
 import Control.Concurrent.STM
+import Control.Monad.IO.Class (liftIO, MonadIO)
 
 data Endpoint = Endpoint
   { sender :: TQueue (Message, ChannelId)
   , receiver :: TQueue Message
   }
 
-newEndpoint :: IO Endpoint
-newEndpoint = atomically $ Endpoint <$> newTQueue <*> newTQueue
+newEndpoint :: MonadIO m => m Endpoint
+newEndpoint = liftIO . atomically $ Endpoint <$> newTQueue <*> newTQueue
 
-publishMessage :: Endpoint -> Message -> ChannelId -> IO ()
-publishMessage endpoint message targetChannelId = atomically $ writeTQueue (sender endpoint) (message, targetChannelId)
+publishMessage :: MonadIO m => Endpoint -> Message -> ChannelId -> m ()
+publishMessage endpoint message targetChannelId = liftIO . atomically $ writeTQueue (sender endpoint) (message, targetChannelId)
 
-onMessageReceived :: Endpoint -> Message -> IO ()
-onMessageReceived endpoint = atomically . writeTQueue (receiver endpoint)
+onMessageReceived :: MonadIO m => Endpoint -> Message -> m ()
+onMessageReceived endpoint = liftIO . atomically . writeTQueue (receiver endpoint)
 
-awaitMessageReceived :: Endpoint -> IO Message
-awaitMessageReceived = atomically . readTQueue . receiver
+awaitMessageReceived :: MonadIO m => Endpoint -> m Message
+awaitMessageReceived = liftIO . atomically . readTQueue . receiver
 
-awaitMessageDispatched :: Endpoint -> IO (Message, ChannelId)
-awaitMessageDispatched = atomically . readTQueue . sender
+awaitMessageDispatched :: MonadIO m => Endpoint -> m (Message, ChannelId)
+awaitMessageDispatched = liftIO . atomically . readTQueue . sender
 
-withNewEndpoint :: (Endpoint -> IO ()) -> IO Endpoint
+withNewEndpoint :: MonadIO m => (Endpoint -> m ()) -> m Endpoint
 withNewEndpoint f = do
   endpoint <- newEndpoint
   f endpoint

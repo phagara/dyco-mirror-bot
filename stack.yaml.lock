@@ -5,12 +5,12 @@
 
 packages:
 - completed:
-    hackage: discord-haskell-1.6.1@sha256:bcede12f4ac273e5f36e41c7ca80e901a723143030122c5ca87296819d011b63,3472
+    hackage: discord-haskell-1.8.1@sha256:86d8777ce02ed404c81d02c7b9b0fd5f870e52c6e3a07d98ce3681a7873f7e0e,3562
     pantry-tree:
-      size: 2108
-      sha256: 93faab153a6e4d65f71c22bfadde95c17cb7f3820e9bb9a2732ccdb2c7ca2fad
+      size: 2107
+      sha256: cfb24b8f065a15db36b7bdb442970cddf36f7c91f18eb2fca4a835f94f24f9a1
   original:
-    hackage: discord-haskell-1.6.1
+    hackage: discord-haskell-1.8.1
 - completed:
     hackage: emoji-0.1.0.2@sha256:d995572a5c7dcd28f98eb15c6e387a7b3bda1ac2477ab0d9dba8580d5d7b161f,1273
     pantry-tree:
@@ -26,12 +26,12 @@ packages:
   original:
     hackage: servant-multipart-0.11.5
 - completed:
-    hackage: telegram-bot-simple-0.3.1@sha256:60f9c76592a3baaf7a98b7a3bd9d6dee3c2935886df34a06bc979382e7738969,3499
+    hackage: telegram-bot-simple-0.3.5@sha256:c325cd48830a38115418ca5e275ff6a713dc63689239a58f1b13bb44dc1d3a76,3601
     pantry-tree:
       size: 1835
-      sha256: 032a6714e01fa980f28b40efde94dd150c0dc656ebb3ac1b44ff7df0e338230a
+      sha256: 548c452cdb0d131cfba0569204fa85753362dc3baaa3e2e96842f3c3a8871c99
   original:
-    hackage: telegram-bot-simple-0.3.1
+    hackage: telegram-bot-simple-0.3.5
 snapshots:
 - completed:
     size: 534126

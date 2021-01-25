@@ -1,7 +1,7 @@
 module Main where
 
 import Config
-import Control.Concurrent.Async
+import Control.Concurrent.Async.Lifted
 import Control.Monad
 import Core
 import Data.Maybe

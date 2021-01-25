@@ -2,7 +2,7 @@ module Providers.Telegram where
 
 import Config
 import Core
-import Control.Concurrent.Async
+import Control.Concurrent.Async.Lifted
 import Control.Monad
 import Control.Monad.Except
 import Control.Monad.Reader.Class
@@ -19,17 +19,10 @@ import Data.Text.Lazy (toStrict)
 
 bot :: Endpoint -> ClientM ()
 bot endpoint = do
-  fork_ $ startPolling onUpdate
+  async $ startPolling onUpdate
   publishLoop
   where
-    fork_ m = do
-      env <- ask
-      let run = do
-            Right result <- runClientM m env
-            return result
-      liftIO $ async run
-
-    onUpdate Update {..} = liftIO $ maybe (return ()) (onMessageReceived endpoint) msg
+    onUpdate Update {..} = maybe (return ()) (onMessageReceived endpoint) msg
       where
         msg = do
           message  <- updateMessage

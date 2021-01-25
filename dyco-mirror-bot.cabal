@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 014f8bb3483186ed7cf23d5dddcb55d5007a5d0f2459a6763cfa96672305f6e6
+-- hash: 6ccebdc8635674404c0bccf97ddbfbbd543984176f123ea40156112ea3415569
 
 name:           dyco-mirror-bot
 version:        0.1.0.0
@@ -39,10 +39,10 @@ library
   default-extensions: DataKinds DeriveAnyClass DeriveGeneric DerivingStrategies DerivingVia DuplicateRecordFields FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving MultiParamTypeClasses NamedFieldPuns OverloadedLabels OverloadedStrings RecordWildCards TemplateHaskell TransformListComp TypeFamilies UndecidableInstances ViewPatterns
   build-depends:
       aeson
-    , async
     , base >=4.7 && <5
     , bytestring
     , discord-haskell
+    , lifted-async
     , mtl
     , optics
     , optics-th
@@ -67,11 +67,11 @@ executable dyco-mirror-bot-exe
   ghc-options: -threaded
   build-depends:
       aeson
-    , async
     , base >=4.7 && <5
     , bytestring
     , discord-haskell
     , dyco-mirror-bot
+    , lifted-async
     , mtl
     , optics
     , optics-th
@@ -97,11 +97,11 @@ test-suite dyco-mirror-bot-test
   ghc-options: -threaded
   build-depends:
       aeson
-    , async
     , base >=4.7 && <5
     , bytestring
     , discord-haskell
     , dyco-mirror-bot
+    , lifted-async
     , mtl
     , optics
     , optics-th

@@ -3,7 +3,7 @@
 .idea
 *.iml
 *.bak
-*.yml
+dyco-mirror*.yml
 .vscode
 dist-newstyle
 *.tar

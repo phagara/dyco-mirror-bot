@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {}, dyco-mirror-bot ? import ./default.nix {} }:
 
 let
-  dyco-mirror-bot-exe = dyco-mirror-bot.projectCross.raspberryPi.hsPkgs.dyco-mirror-bot.components.exes.dyco-mirror-bot-exe;
+  dyco-mirror-bot-exe = dyco-mirror-bot.dyco-mirror-bot.components.exes.dyco-mirror-bot-exe;
 
   entrypoint = pkgs.writeScript "entrypoint.sh" ''
   #!${pkgs.stdenv.shell}

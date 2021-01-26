@@ -20,11 +20,4 @@
   };
   # Specify the GHC version to use.
   #compiler-nix-name = "ghc8102"; # Not required for `stack.yaml` based projects.
-  modules = [
-    {
-      dontPatchELF = false;
-      dontStrip = false;
-      enableShared = false;
-    }
-  ];
 }

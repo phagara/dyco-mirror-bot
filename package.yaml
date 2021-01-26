@@ -68,6 +68,8 @@ executables:
     source-dirs:         app
     ghc-options:
     - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
     dependencies:
     - dyco-mirror-bot
 
@@ -77,5 +79,7 @@ tests:
     source-dirs:         test
     ghc-options:
     - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
     dependencies:
     - dyco-mirror-bot

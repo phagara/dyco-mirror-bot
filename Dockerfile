@@ -2,7 +2,6 @@ FROM debian:bullseye
 COPY . /build
 WORKDIR /build
 ENV USER=root
-ENV NIXPKGS_ALLOW_BROKEN=1
 RUN \
 	apt-get update &&\
 	apt-get install --no-install-recommends -y 'nix-setup-systemd=2.3.7+dfsg1-1' 'ca-certificates=20210119' &&\
